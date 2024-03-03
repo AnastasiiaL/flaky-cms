@@ -1,0 +1,11 @@
+quarkus:
+  console:
+    color: true
+  flyway:
+    migrate-at-start: true
+    validate-on-migrate: true
+    validate-migration-naming: true
+    locations: "db/migration"
+  hibernate-orm:
+    database:
+      generation: validate

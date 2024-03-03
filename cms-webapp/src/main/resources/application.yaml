@@ -1,0 +1,70 @@
+quarkus:
+  datasource:
+    jdbc:
+      enable-metrics: true
+    metrics:
+      enabled: true
+  live-reload:
+    instrumentation: true
+  test:
+    continuous-testing: disabled
+  banner:
+    enabled: false
+  hibernate-envers:
+    store-data-at-delete: true
+  hibernate-orm:
+    metrics:
+      enabled: true
+  log:
+    metrics:
+      enabled: true
+    category:
+      "org.hibernate":
+        min-level: TRACE
+        level: WARN
+      "io.quarkus":
+        min-level: TRACE
+        level: INFO
+      "nl.cms":
+        min-level: TRACE
+        level: INFO
+
+application:
+  git:
+    commit: ${git.commit.id.abbrev:local}
+  build:
+    number: ${build.number:local}
+
+"%dev":
+  quarkus:
+    micrometer:
+      export:
+        azuremonitor:
+          enabled: false
+    console:
+      color: true
+    log:
+      console:
+        json: false
+    flyway:
+      clean-at-start: true
+      locations: "db/migration,db/sample"
+    datasource:
+      devservices:
+        port: 1433
+
+"%test":
+  quarkus:
+    application:
+      version: 1.0.0-SNAPSHOT
+    micrometer:
+      export:
+        azuremonitor:
+          enabled: false
+    console:
+      color: true
+    log:
+      console:
+        json: false
+    flyway:
+      clean-at-start: true

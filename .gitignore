@@ -1,0 +1,49 @@
+# Eclipse
+.project
+.classpath
+.settings/
+.factorypath
+bin/
+
+# IntelliJ
+.idea
+*.ipr
+*.iml
+*.iws
+
+# NetBeans
+nb-configuration.xml
+
+# Visual Studio Code
+.vscode
+
+# OSX
+.DS_Store
+
+# Vim
+*.swp
+*.swo
+
+# patch
+*.orig
+*.rej
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+release.properties
+
+# jqwik
+.jqwik-database
+
+# Configuration
+*.env
+
+# Jacoco
+jacoco.exec
+cms-domain/jacoco.exec
+
+# jenv
+.java-version
