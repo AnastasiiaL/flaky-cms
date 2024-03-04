@@ -62,22 +62,3 @@ To persist the database provisioned using devservices you can enable the `Reusab
 
 Note: Also make sure that flyway is not doing a database clean up at start time, by setting `_DEV_QUARKUS_FLYWAY_CLEAN_AT_START` to false.
 
-#### Inspecting the database
-
-To connect to the database that was provisioned using devservices you can use the following properties to inspect the database:
-
-- **host:** `localhost`
-- **port:** `1433`
-- **database/schema:** `master`
-- **username:** `SA`
-- **password:** `Quarkus123`
-- **authentication:** `SQL Server Authentication`
-
-See the [Quarkus Devservices for databases](https://quarkus.io/guides/databases-dev-services#connect-to-database-run-as-a-dev-service) documentation for more information.
-
-### Keycloak
-
-Administration console
-http://localhost:8180
-
-The keycloak realm file is found at `infra/keycloak/quarkus-realm.json` which is imported when the container is created.
